@@ -109,8 +109,14 @@ Integrity Statement
 All sources were properly cited. Implementations and analysis represent original work. No AI-generated content was copied without attribution or adaptation.
 
 Schema No1 screenshot
+
+
 ![image alt](https://github.com/uhirw/plsql_window_functions_29149_Uhirwa/blob/main/Screenshots/schema1.png)
+
+
 Schema No2 screenshot
+
+
 ![image alt](https://github.com/uhirw/plsql_window_functions_29149_Uhirwa/blob/main/Screenshots/schema2.png)
 
 
