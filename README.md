@@ -45,8 +45,7 @@ TABLE4:SALES
 
 ER DIAGRAM
 
-
-     +---------+
+'''    +---------+
      | regions |
      +---------+
      |region_id PK|
@@ -76,7 +75,7 @@ ER DIAGRAM
      |sale_date    |     |price         |
      |total_amount |     +---------+
      |quantity     |
-     +--------+
+     +--------+                               '''
 
 INNER JOIN
 -- Retrieve all sales with valid customer and product details
