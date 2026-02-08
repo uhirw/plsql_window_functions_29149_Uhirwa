@@ -3,6 +3,7 @@ Sales data is stored across multiple related tables, which makes direct analysis
 This project applies SQL JOINs and Window Functions to generate insights that support marketing, sales, and inventory decisions.
 
 INNER JOIN
+-- Retrieve all sales with valid customer and product details
 SELECT
     s.sale_id,
     c.first_name,
@@ -13,7 +14,11 @@ FROM sales s
 INNER JOIN customers c ON s.customer_id = c.customer_id
 INNER JOIN products p ON s.product_id = p.product_id;
 
+Business interpretation on Inner join
+This query returns only sales records that are linked to existing customers and products. It confirms that each transaction is valid and properly connected across tables. This ensures accurate reporting of completed sales.
+
 LEFT JOIN 
+-- List customers with no recorded sales
 SELECT
     c.customer_id,
     c.first_name,
@@ -23,7 +28,11 @@ FROM customers c
 LEFT JOIN sales s ON c.customer_id = s.customer_id
 WHERE s.sale_id IS NULL;
 
+Business Interpretation
+This query identifies customers who have not made any purchases. In your data, Chantal Umutoni is one such customer. The company can target these inactive customers with promotions.
+
 RIGHT JOIN
+-- Find products that have no sales
 SELECT
     p.product_id,
     p.product_name,
@@ -32,7 +41,11 @@ FROM sales s
 RIGHT JOIN products p ON s.product_id = p.product_id
 WHERE s.sale_id IS NULL;
 
+Business Interpretation
+This query shows products with no recorded sales. In this dataset, all products have been sold at least once, so no rows appear. It helps management identify underperforming products.
+
 FULL OUTER JOIN
+-- Show all customers and products including unmatched sales records
 SELECT
     c.first_name,
     p.product_name,
@@ -41,7 +54,11 @@ FROM customers c
 FULL OUTER JOIN sales s ON c.customer_id = s.customer_id
 FULL OUTER JOIN products p ON s.product_id = p.product_id;
 
+Business Interpretation
+This query shows products with no recorded sales. In this dataset, all products have been sold at least once, so no rows appear. It helps management identify underperforming products.
+
 SELF JOIN
+-- Compare customers within the same region
 SELECT
     c1.first_name,
     c1.last_name,
@@ -53,7 +70,11 @@ JOIN customers c2
 ON c1.region_id = c2.region_id
 AND c1.customer_id <> c2.customer_id;
 
+Business Interpretation
+This query compares customers in the same region. It shows customer clusters for regional analysis. For example, Jean and Eric are in region 1, while Aline and Chantal are in region 2.
+
 Ranking functions
+-- Rank products by total revenue within each region
 SELECT
     r.region_name,
     p.product_name,
@@ -65,7 +86,11 @@ JOIN regions r ON c.region_id = r.region_id
 JOIN products p ON s.product_id = p.product_id
 GROUP BY r.region_name, p.product_name;
 
+Interpretation
+This query ranks products by revenue within each region. For example, in Kigali, Laptop is rank 1 and Smartphone is rank 2. Management can prioritize top products for marketing.
+
 Aggregate Window Functions
+-- Calculate running total of sales over time
 SELECT
     sale_date,
     SUM(total_amount) AS daily_sales,
@@ -74,7 +99,11 @@ FROM sales
 GROUP BY sale_date
 ORDER BY sale_date;
 
+Interpretation
+This query calculates cumulative sales over time. For example, total sales reach 3180 after the last sale. It is useful for tracking growth trends.
+
 Navigation functions
+-- Compare each month's sales with previous month's sales
 SELECT
     sale_date,
     SUM(total_amount) AS monthly_sales,
@@ -83,7 +112,11 @@ FROM sales
 GROUP BY sale_date
 ORDER BY sale_date;
 
+Interpretation
+This query compares sales with the previous period. It highlights increases or decreases, such as January 15 compared to January 10. It helps assess performance trends.
+
 Distribution functions
+-- Divide customers into four spending groups based on total spent
 SELECT
     c.customer_id,
     c.first_name,
@@ -93,6 +126,8 @@ FROM customers c
 JOIN sales s ON c.customer_id = s.customer_id
 GROUP BY c.customer_id, c.first_name;
 
+Interpretation
+This query segments customers into four spending groups. For example, Jean is in group 4 (highest spending), Eric is in group 1 (lowest). This helps target marketing strategies by spending level.
 
 Key Insights
 
