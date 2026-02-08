@@ -2,6 +2,46 @@ Retail Company is a mid-size retail business operating in East Africa. The Sales
 Sales data is stored across multiple related tables, which makes direct analysis difficult.
 This project applies SQL JOINs and Window Functions to generate insights that support marketing, sales, and inventory decisions.
 
+TABLE1:REGIONS
+_________________________________________
+| Column      | Data Type | Constraints |
+| ----------- | --------- | ----------- |
+| region_id   | SERIAL    | PRIMARY KEY |
+| region_name | VARCHAR   | NOT NULL    |
+|_______________________________________|
+
+TABLE2:CUSTOMERS
+
+______________________________________________________________
+| Column      | Data Type | Constraints                      |
+| ----------- | --------- | -------------------------------- |
+| customer_id | SERIAL    | PRIMARY KEY                      |
+| first_name  | VARCHAR   | NOT NULL                         |
+| last_name   | VARCHAR   | NOT NULL                         |
+| region_id   | INT       | FOREIGN KEY → regions(region_id) |
+|____________________________________________________________|
+
+TABKE 3:PRODUCTS
+__________________________________________
+| Column       | Data Type | Constraints |
+| ------------ | --------- | ----------- |
+| product_id   | SERIAL    | PRIMARY KEY |
+| product_name | VARCHAR   | NOT NULL    |
+| price        | NUMERIC   | NOT NULL    |
+|________________________________________|
+
+TABLE4:SALES
+___________________________________________________________________
+| Column       | Data Type | Constraints                          |
+| ------------ | --------- | ------------------------------------ |
+| sale_id      | SERIAL    | PRIMARY KEY                          |
+| customer_id  | INT       | FOREIGN KEY → customers(customer_id) |
+| product_id   | INT       | FOREIGN KEY → products(product_id)   |
+| sale_date    | DATE      | NOT NULL                             |
+| total_amount | NUMERIC   | NOT NULL                             |
+| quantity     | INT       | NOT NULL                             |
+|_________________________________________________________________|
+
 INNER JOIN
 -- Retrieve all sales with valid customer and product details
 SELECT
