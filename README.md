@@ -96,13 +96,29 @@ GROUP BY c.customer_id, c.first_name;
 
 Key Insights
 
-The analysis shows that electronic products generate the highest revenue across regions. Several customers have not made any purchases, indicating potential targets for marketing campaigns. Sales performance varies across different time periods, suggesting seasonal patterns. Customer segmentation reveals clear differences in spending behavior that can be used for targeted promotions.
+Descriptive Analysis 
+
+The analysis shows that a small number of products generate most of the total sales revenue across regions. Some customers purchase very frequently while others make only occasional purchases. Sales volumes also increase during certain months, indicating seasonal buying behavior.
+
+Diagnostic Analysis 
+
+High-performing products are popular because they are consistently purchased by repeat customers. Regions with higher sales have more active customers and higher transaction frequency. Seasonal trends occur due to promotions and increased demand during specific periods of the year.
+
+Prescriptive Analysis 
+
+The company should focus marketing efforts on top-performing products and high-value customer segments. Promotions can be scheduled during high-growth months to maximize revenue. Low-performing products should be reviewed for pricing, promotion, or possible discontinuation.
 
 References
 
-PostgreSQL Official Documentation
-PostgreSQL Window Functions Documentation
-W3Schools SQL JOINs and Window Functions
+PostgreSQL Global Development Group. PostgreSQL Documentation.
+https://www.postgresql.org/docs/   
+
+Mode Analytics. SQL Window Functions Guide.
+https://mode.com/sql-tutorial/sql-window-functions/
+
+W3Schools. SQL JOIN Tutorial.
+https://www.w3schools.com/sql/sql_join.asp
+
 
 Integrity Statement
 
