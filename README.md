@@ -43,40 +43,10 @@ TABLE4:SALES
 
 
 
-## ER Diagram
+ ER Diagram
+![image alt](https://github.com/uhirw/plsql_window_functions_29149_Uhirwa/blob/main/Screenshots/ER%20Diagram.screenshot.png)
 
-    +---------+
-     | regions |
-     +---------+
-     |region_id PK|
-     |region_name |
-     +---------+
-          ^
-          |
-          | 1-to-many
-          |
-     +-----------+
-     | customers |
-     +-----------+
-     |customer_id PK|
-     |first_name    |
-     |last_name     |
-     |region_id FK  |
-     +-----------+
-          ^
-          | 1-to-many
-          |
-     +--------+          +---------+
-     | sales  |          | products|
-     +--------+          +---------+
-     |sale_id PK|        |product_id PK|
-     |customer_id FK|<---|product_id    |
-     |product_id FK|     |product_name  |
-     |sale_date    |     |price         |
-     |total_amount |     +---------+
-     |quantity     |
-     +--------+  
-
+   
 
 INNER JOIN
 -- Retrieve all sales with valid customer and product details
