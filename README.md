@@ -43,8 +43,10 @@ TABLE4:SALES
 
 
 
+
  ER Diagram
 ![image alt](https://github.com/uhirw/plsql_window_functions_29149_Uhirwa/blob/main/Screenshots/ER%20Diagram.screenshot.png)
+
 
    
 
@@ -135,6 +137,8 @@ GROUP BY r.region_name, p.product_name;
 Interpretation
 This query ranks products by revenue within each region. For example, in Kigali, Laptop is rank 1 and Smartphone is rank 2. Management can prioritize top products for marketing.
 
+
+
 Aggregate Window Functions
 -- Calculate running total of sales over time
 SELECT
@@ -175,6 +179,8 @@ GROUP BY c.customer_id, c.first_name;
 Interpretation
 This query segments customers into four spending groups. For example, Jean is in group 4 (highest spending), Eric is in group 1 (lowest). This helps target marketing strategies by spending level.
 
+
+
 Key Insights
 
 Descriptive Analysis 
@@ -189,6 +195,8 @@ Prescriptive Analysis
 
 The company should focus marketing efforts on top-performing products and high-value customer segments. Promotions can be scheduled during high-growth months to maximize revenue. Low-performing products should be reviewed for pricing, promotion, or possible discontinuation.
 
+
+
 References
 
 PostgreSQL Global Development Group. PostgreSQL Documentation.
@@ -199,6 +207,7 @@ https://mode.com/sql-tutorial/sql-window-functions/
 
 W3Schools. SQL JOIN Tutorial.
 https://www.w3schools.com/sql/sql_join.asp
+
 
 
 Integrity Statement
