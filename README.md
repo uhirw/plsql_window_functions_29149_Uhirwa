@@ -108,8 +108,8 @@ Integrity Statement
 
 All sources were properly cited. Implementations and analysis represent original work. No AI-generated content was copied without attribution or adaptation.
 
-![image alt](https://github.com/uhirw/plsql_window_functions_29149_Uhirwa/blob/main/Sqlcommands1.png)
-![image alt](https://github.com/uhirw/plsql_window_functions_29149_Uhirwa/blob/main/sql%20commands2.png)
+![image alt](https://github.com/uhirw/plsql_window_functions_29149_Uhirwa/blob/main/Screenshots/schema1.png)
+![image alt](https://github.com/uhirw/plsql_window_functions_29149_Uhirwa/blob/main/Screenshots/schema2.png)
 
 
 
