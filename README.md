@@ -45,7 +45,7 @@ TABLE4:SALES
 
 ## ER Diagram
 
-"   +---------+
+    +---------+
      | regions |
      +---------+
      |region_id PK|
@@ -75,7 +75,7 @@ TABLE4:SALES
      |sale_date    |     |price         |
      |total_amount |     +---------+
      |quantity     |
-     +--------+  "
+     +--------+  
 
 
 INNER JOIN
